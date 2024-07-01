@@ -1,0 +1,14 @@
+{
+  "name": "seed-subgraph",
+  "version": "0.1.0",
+  "description": "Subgraph to track MetaGame's SEED token",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dysbulic <d@dhappy.org>",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.78.0"
+  }
+}
