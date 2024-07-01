@@ -1,14 +1,22 @@
 {
-  "name": "seed-subgraph",
+  "name": "metagame-seed-subgraph",
   "version": "0.1.0",
   "description": "Subgraph to track MetaGame's SEED token",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ metagame-seed",
+    "create-local": "graph create --node http://localhost:8020/ metagame-seed",
+    "remove-local": "graph remove --node http://localhost:8020/ metagame-seed",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 metagame-seed",
+    "test": "graph test"
   },
   "author": "dysbulic <d@dhappy.org>",
   "license": "CC0-1.0",
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.78.0"
-  }
+    "@graphprotocol/graph-cli": "^0.78.0",
+    "@graphprotocol/graph-ts": "0.32.0"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
 }
