@@ -15,3 +15,22 @@ type ProxyUpdated @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type Token @entity {
+  id: ID!
+  name: String!
+  symbol: String!
+  decimals: BigDecimal!
+}
+
+type Account @entity {
+  id: ID!
+  balances: [TokenBalance!]! @derivedFrom(field: "account")
+}
+
+type TokenBalance @entity {
+  id: ID!
+  token: Token!
+  account: Account!
+  amount: BigDecimal!
+}
